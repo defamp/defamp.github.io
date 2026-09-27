@@ -84,6 +84,8 @@
   .proj-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .proj-tags span{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.25);padding:3px 9px;border-radius:6px}
   .proj-link{margin-top:16px;font-size:.88rem;font-weight:600;color:var(--accent)}
+  .proj-status{margin-top:16px;font-size:.76rem;color:var(--muted);font-family:'JetBrains Mono',monospace;display:flex;align-items:center;gap:7px}
+  .proj-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 6px var(--accent2);flex:none}
 
   /* CERTS */
   .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -212,40 +214,39 @@
 <section id="projects">
   <div class="wrap">
     <h2 class="sec-title">Projects</h2>
-    <p class="sec-sub">Ganti kartu di bawah dengan proyek nyata Anda (edit di index.html)</p>
-    <!-- EDIT: Ubah judul, deskripsi, tags, dan link (href) tiap kartu. Tambah/hapus <article class="proj-card"> sesuai kebutuhan. -->
+    <p class="sec-sub">Security research &amp; hands-on practice</p>
     <div class="proj-grid">
 
       <article class="proj-card">
-        <div class="proj-icon">&#128225;</div>
-        <h3>SOC Home Lab (Wazuh + ELK)</h3>
-        <p>Lab deteksi ancaman: mengirim log dari beberapa endpoint ke SIEM, membuat dashboard &amp; alert rules, lalu menguji deteksinya. <em>(Deskripsi contoh — sesuaikan.)</em></p>
-        <div class="proj-tags"><span>Wazuh</span><span>ELK</span><span>Blue Team</span></div>
-        <a class="proj-link" href="#" target="_blank" rel="noopener">Lihat repo &rarr;</a>
-      </article>
-
-      <article class="proj-card">
         <div class="proj-icon">&#128737;</div>
-        <h3>Detection Rules Collection</h3>
-        <p>Kumpulan Sigma/YARA rules yang dipetakan ke teknik MITRE ATT&amp;CK, lengkap dengan pengujiannya. <em>(Deskripsi contoh — sesuaikan.)</em></p>
-        <div class="proj-tags"><span>Sigma</span><span>YARA</span><span>MITRE ATT&amp;CK</span></div>
-        <a class="proj-link" href="#" target="_blank" rel="noopener">Lihat repo &rarr;</a>
+        <h3>Coordinated Vulnerability Disclosure — Government CERTs</h3>
+        <p>Security research mandiri terhadap program VDP resmi (CERT-FR/ANSSI, US CISA/DHS, NCSC-NL, UK NCSC, Singapore GovTech, NASA). Menganalisis beragam kelas kerentanan — dari cryptographic nonce reuse, CORS misconfiguration, insecure update mechanism, hingga argument injection — dan menjalani proses coordinated disclosure end-to-end secara etis, termasuk memahami dasar triase &amp; severity.</p>
+        <div class="proj-tags"><span>Responsible Disclosure</span><span>Web Security</span><span>Cryptography</span></div>
+        <div class="proj-status">6+ program VDP &middot; proses disclosure profesional</div>
       </article>
 
       <article class="proj-card">
-        <div class="proj-icon">&#127942;</div>
-        <h3>CTF &amp; TryHackMe Writeups</h3>
-        <p>Dokumentasi metodologi penyelesaian tantangan keamanan sebagai bukti kemampuan analisis. <em>(Deskripsi contoh — sesuaikan.)</em></p>
-        <div class="proj-tags"><span>Pentest</span><span>Writeup</span><span>CTF</span></div>
-        <a class="proj-link" href="#" target="_blank" rel="noopener">Baca writeup &rarr;</a>
+        <div class="proj-icon">&#128279;</div>
+        <h3>Blockchain Security Code Review — Circle Arc</h3>
+        <p>Static source-code review pada komponen node &amp; remote-signer (HackerOne, source-in-scope). Menelaah area seperti consensus signing, autentikasi service, dan penanganan transaksi menggunakan metodologi <em>passive</em>: analisis kode, dependency scanning, dan review konfigurasi — tanpa eksploitasi aktif terhadap aset live.</p>
+        <div class="proj-tags"><span>Code Audit</span><span>Blockchain</span><span>Rust / Go</span></div>
+        <div class="proj-status">Static analysis &middot; passive recon</div>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-icon">&#128225;</div>
+        <h3>Bug Bounty Recon &amp; Methodology</h3>
+        <p>Reconnaissance dan pemetaan attack surface pada program bug bounty publik (GitLab, Robinhood, DoorDash, Zooplus): analisis scope, enumerasi aset &amp; subdomain, fingerprinting teknologi, dan penyusunan rencana pengujian sesuai rules of engagement dan safe harbor.</p>
+        <div class="proj-tags"><span>Recon</span><span>Attack Surface</span><span>Bug Bounty</span></div>
+        <div class="proj-status">Scope analysis &middot; surface mapping</div>
       </article>
 
       <article class="proj-card">
         <div class="proj-icon">&#128187;</div>
-        <h3>Security Automation Script</h3>
-        <p>Tool Python untuk otomasi tugas keamanan — mis. enrichment IoC via VirusTotal/AbuseIPDB. <em>(Deskripsi contoh — sesuaikan.)</em></p>
-        <div class="proj-tags"><span>Python</span><span>Automation</span><span>Threat Intel</span></div>
-        <a class="proj-link" href="#" target="_blank" rel="noopener">Lihat repo &rarr;</a>
+        <h3>Penetration Testing Home Lab</h3>
+        <p>Lab terisolasi untuk latihan offensive &amp; defensive: Metasploitable2, bWAPP (bee-box), dan aplikasi rentan berbasis Docker. Latihan enumerasi (Nmap), eksploitasi terkontrol, dan analisis kerentanan web dalam lingkungan yang aman.</p>
+        <div class="proj-tags"><span>Pentest</span><span>Metasploit</span><span>Nmap</span></div>
+        <div class="proj-status">Isolated lab &middot; hands-on practice</div>
       </article>
 
     </div>
