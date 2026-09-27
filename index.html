@@ -47,6 +47,16 @@
   .btn-ghost{background:var(--bg-soft);border-color:var(--border);color:var(--text)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
   .avatar{width:210px;height:260px;object-fit:cover;border-radius:16px;border:2px solid var(--border);box-shadow:var(--shadow)}
+  /* Hacker matrix avatar */
+  .avatar-hacker{position:relative;overflow:hidden;background:#02100a;border-color:#134e34;box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 24px rgba(52,211,153,.18)}
+  .avatar-hacker canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .avatar-hacker .hood{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);width:86%;height:90%;filter:drop-shadow(0 0 7px rgba(52,211,153,.55))}
+  .avatar-hacker .eye{animation:hkblink 3.4s infinite}
+  @keyframes hkblink{0%,90%,100%{opacity:.95;filter:drop-shadow(0 0 4px #34d399)}94%{opacity:.12}}
+  .avatar-hacker .scan{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0) 50%,rgba(0,0,0,.28) 50%);background-size:100% 4px;pointer-events:none;mix-blend-mode:overlay}
+  .avatar-hacker .glow{position:absolute;inset:0;box-shadow:inset 0 0 42px rgba(52,211,153,.22);pointer-events:none}
+  .avatar-hacker::after{content:"";position:absolute;left:0;right:0;top:0;height:16px;background:linear-gradient(rgba(52,211,153,.35),rgba(52,211,153,0));animation:hksweep 4.2s linear infinite;pointer-events:none}
+  @keyframes hksweep{0%{transform:translateY(-16px)}100%{transform:translateY(260px)}}
 
   /* SECTION HEADINGS */
   .sec-title{font-size:1.7rem;font-weight:800;margin-bottom:8px}
@@ -129,7 +139,23 @@
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/defa-mulya-pratama-4316b720a/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
-    <img class="avatar" src="profile.jpg" alt="Defa Mulya Pratama">
+    <div class="avatar avatar-hacker" role="img" aria-label="Animasi hacker — matrix code rain">
+      <canvas id="matrix"></canvas>
+      <svg class="hood" viewBox="0 0 200 240" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+        <defs>
+          <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0b241a"/><stop offset="1" stop-color="#02100a"/>
+          </linearGradient>
+        </defs>
+        <path d="M100 34 C62 34 48 74 50 116 C24 138 16 196 20 240 L180 240 C184 196 176 138 150 116 C152 74 138 34 100 34 Z"
+              fill="url(#hg)" stroke="#22c55e" stroke-opacity="0.55" stroke-width="1.5"/>
+        <ellipse cx="100" cy="112" rx="35" ry="44" fill="#010a06"/>
+        <circle class="eye" cx="86" cy="112" r="4.2" fill="#34d399"/>
+        <circle class="eye" cx="114" cy="112" r="4.2" fill="#34d399"/>
+      </svg>
+      <div class="scan"></div>
+      <div class="glow"></div>
+    </div>
   </div>
 </header>
 
@@ -266,5 +292,30 @@
 </footer>
 
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+/* Matrix code rain for the hacker avatar */
+(function(){
+  var c=document.getElementById('matrix'); if(!c) return;
+  var ctx=c.getContext('2d');
+  var chars='アカサタナハマヤラワ0123456789ABCDEF#$%<>/{}'.split('');
+  var cols, drops, fs=13;
+  function size(){ c.width=c.clientWidth; c.height=c.clientHeight; cols=Math.max(1,Math.floor(c.width/fs)); drops=[]; for(var i=0;i<cols;i++){drops[i]=Math.random()*c.height/fs;} }
+  function draw(){
+    ctx.fillStyle='rgba(2,16,10,0.11)'; ctx.fillRect(0,0,c.width,c.height);
+    ctx.font=fs+'px monospace';
+    for(var i=0;i<cols;i++){
+      var t=chars[Math.floor(Math.random()*chars.length)];
+      var y=drops[i]*fs;
+      ctx.fillStyle = Math.random()>0.97 ? '#eafff4' : '#34d399';
+      ctx.fillText(t, i*fs, y);
+      if(y>c.height && Math.random()>0.975){ drops[i]=0; }
+      drops[i]++;
+    }
+  }
+  size();
+  var timer=setInterval(draw,58);
+  var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(size,150); });
+})();
+</script>
 </body>
 </html>
