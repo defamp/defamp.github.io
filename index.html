@@ -250,6 +250,14 @@
       </article>
 
       <article class="proj-card">
+        <div class="proj-icon">&#128300;</div>
+        <h3>Detection Engineering — Sigma &amp; Wazuh as Code</h3>
+        <p>Rule deteksi <strong>Sigma</strong> untuk serangan Linux (SSH brute-force/spraying, sudo root, user baru, crontab) &amp; web (SQLi, path traversal, web shell), dipetakan ke <strong>MITRE ATT&amp;CK</strong> dan <strong>diuji di CI</strong> — tiap rule punya sampel serangan yang harus tertangkap + sampel benign yang harus diabaikan. Termasuk parser log mentah dan 15 rule + decoder <strong>Wazuh</strong> yang divalidasi via <code>wazuh-logtest</code> di GitHub Actions (57/57 lolos, gap didokumentasikan jujur).</p>
+        <div class="proj-tags"><span>Sigma</span><span>Wazuh</span><span>MITRE ATT&amp;CK</span><span>CI/CD</span></div>
+        <a class="proj-link" href="https://github.com/defamp/detection-engineering" target="_blank" rel="noopener">Lihat repo &rarr;</a>
+      </article>
+
+      <article class="proj-card">
         <div class="proj-icon">&#128737;</div>
         <h3>Coordinated Vulnerability Disclosure — Government CERTs</h3>
         <p>Security research mandiri terhadap program VDP resmi (CERT-FR/ANSSI, US CISA/DHS, NCSC-NL, UK NCSC, Singapore GovTech, NASA). Menganalisis beragam kelas kerentanan — dari cryptographic nonce reuse, CORS misconfiguration, insecure update mechanism, hingga argument injection — dan menjalani proses coordinated disclosure end-to-end secara etis, termasuk memahami dasar triase &amp; severity.</p>
