@@ -274,6 +274,16 @@
       </article>
 
       <article class="proj-card">
+        <div class="proj-icon">&#128273;</div>
+        <h3>tokenpeek — JWT &amp; Token Security Analyzer</h3>
+        <p>Tool web (client-side) untuk analisis keamanan JWT: decode header/payload/signature, lalu deteksi kelemahan &mdash; <code>alg=none</code>, <strong>secret HMAC lemah</strong> (crack wordlist via Web Crypto di browser), header key-injection (<code>jku</code>/<code>jwk</code>/<code>kid</code>), data sensitif di payload, &amp; expiry. Verifikasi signature RS/ES pakai public key. <strong>100% di browser &mdash; token gak pernah keluar dari device.</strong> Zero dependency, teruji (Node test).</p>
+        <div class="proj-tags"><span>JavaScript</span><span>Web Crypto</span><span>AppSec</span><span>JWT</span></div>
+        <a class="proj-link" href="https://defamp.github.io/tokenpeek/" target="_blank" rel="noopener">Coba live demo &rarr;</a>
+        &nbsp;·&nbsp;
+        <a class="proj-link" href="https://github.com/defamp/tokenpeek" target="_blank" rel="noopener">Repo &rarr;</a>
+      </article>
+
+      <article class="proj-card">
         <div class="proj-icon">&#128269;</div>
         <h3>Cyber Recon — Passive Recon Orchestrator</h3>
         <p>Recon orchestrator Python untuk program VDP/bug bounty: enumerasi subdomain pasif (crt.sh + HackerTarget), HTTP probing + tech fingerprint (server, header, CORS misconfig), penambangan URL/JS dari Wayback Machine, dan deteksi secret API (AWS, GitHub, Slack, JWT, dll). Output Markdown + JSON report. Modular, async, didesain untuk operasi etis (passive-only default).</p>
