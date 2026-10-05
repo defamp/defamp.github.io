@@ -242,6 +242,14 @@
       </article>
 
       <article class="proj-card">
+        <div class="proj-icon">&#129516;</div>
+        <h3>maltriage — Malware Sandbox Report Triage</h3>
+        <p>Triase report sandbox malware (CAPE/Cuckoo <code>report.json</code>) menjadi satu verdict berskor: parse schema sandbox &rarr; ekstrak <strong>IOC</strong> (domain/IP/URL/dropped file/registry/mutex), petakan signature ke <strong>MITRE ATT&amp;CK</strong>, ranking severity, dan rekonstruksi process tree. Output console/Markdown/HTML/JSON, exit code untuk pipeline. 100% offline tanpa API key. Pure Python, teruji (pytest) + CI.</p>
+        <div class="proj-tags"><span>Python</span><span>Malware Analysis</span><span>MITRE ATT&amp;CK</span><span>DFIR</span></div>
+        <a class="proj-link" href="https://github.com/defamp/maltriage" target="_blank" rel="noopener">Lihat repo &rarr;</a>
+      </article>
+
+      <article class="proj-card">
         <div class="proj-icon">&#128269;</div>
         <h3>Cyber Recon — Passive Recon Orchestrator</h3>
         <p>Recon orchestrator Python untuk program VDP/bug bounty: enumerasi subdomain pasif (crt.sh + HackerTarget), HTTP probing + tech fingerprint (server, header, CORS misconfig), penambangan URL/JS dari Wayback Machine, dan deteksi secret API (AWS, GitHub, Slack, JWT, dll). Output Markdown + JSON report. Modular, async, didesain untuk operasi etis (passive-only default).</p>
