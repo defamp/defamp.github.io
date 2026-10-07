@@ -145,6 +145,8 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#opensource">Open Source</a>
+      <a href="#writing">Writing</a>
       <a href="#certs">Certifications</a>
       <a href="#contact">Contact</a>
     </div>
@@ -342,6 +344,79 @@
   </div>
 </section>
 
+<!-- OPEN SOURCE -->
+<section id="opensource" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <h2 class="sec-title">Open Source Contributions</h2>
+    <p class="sec-sub">Menyumbang detection content ke proyek komunitas keamanan</p>
+    <div class="proj-grid">
+
+      <article class="proj-card">
+        <div class="proj-icon">&#128737;</div>
+        <h3>SigmaHQ / sigma &mdash; Detection Rules</h3>
+        <p>Berkontribusi 5 rule deteksi Linux ke repositori <strong>Sigma</strong> kanonik (&#9733;11k+): abuse <code>systemd-run</code> (exec/persistence) serta primitif privilege-escalation GTFOBins via <code>tar</code>, <code>tcpdump</code>, <code>gdb</code>, dan <code>xargs</code>. Tiap rule dipetakan ke <strong>MITRE ATT&amp;CK</strong> dan lolos validator resmi (<code>sigma check</code>, <code>test_rules</code>, <code>test_logsource</code>).</p>
+        <div class="proj-tags"><span>Sigma</span><span>MITRE ATT&amp;CK</span><span>Linux</span></div>
+        <div class="proj-status">5 pull request &middot; under review</div>
+        <a class="proj-link" href="https://github.com/SigmaHQ/sigma/pulls?q=is%3Apr+author%3Adefamp" target="_blank" rel="noopener">Lihat PR &rarr;</a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-icon">&#9876;</div>
+        <h3>Atomic Red Team &mdash; Attack Simulations</h3>
+        <p>Berkontribusi atomic test ke <strong>Atomic Red Team</strong> (&#9733;12.6k+) untuk teknik <strong>T1548.003 (Sudo privilege escalation)</strong> via <code>tar</code>, <code>tcpdump</code>, <code>gdb</code>, dan <code>xargs</code> &mdash; sisi <em>serangan</em> yang berpasangan dengan rule deteksi Sigma di atas (full loop attack&harr;detect). Lolos validator resmi repo.</p>
+        <div class="proj-tags"><span>Atomic Red Team</span><span>Purple Team</span><span>GTFOBins</span></div>
+        <div class="proj-status">3 pull request &middot; under review</div>
+        <a class="proj-link" href="https://github.com/redcanaryco/atomic-red-team/pulls?q=is%3Apr+author%3Adefamp" target="_blank" rel="noopener">Lihat PR &rarr;</a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-icon">&#129409;</div>
+        <h3>Hayabusa Rules &mdash; Windows Detection</h3>
+        <p>Rule deteksi untuk <strong>Hayabusa</strong> (Yamato Security) pada log Windows built-in (Security EventID 4688): <strong>Inhibit System Recovery (T1490)</strong> &mdash; indikator ransomware (hapus shadow copy / disable recovery) yang bekerja tanpa Sysmon.</p>
+        <div class="proj-tags"><span>Hayabusa</span><span>Windows</span><span>DFIR</span></div>
+        <div class="proj-status">1 pull request &middot; under review</div>
+        <a class="proj-link" href="https://github.com/Yamato-Security/hayabusa-rules/pulls?q=is%3Apr+author%3Adefamp" target="_blank" rel="noopener">Lihat PR &rarr;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <div class="wrap">
+    <h2 class="sec-title">Writing</h2>
+    <p class="sec-sub">Artikel teknis di Medium</p>
+    <div class="proj-grid">
+
+      <article class="proj-card">
+        <div class="proj-icon">&#9999;</div>
+        <h3>Alert Names Don't Travel &mdash; But Techniques Do</h3>
+        <p>Kenapa nama alert beda-beda antar tool (XDR komersial vs Wazuh vs Sigma) tapi semuanya bermuara ke satu teknik MITRE ATT&amp;CK &mdash; dan apa yang sebenarnya harus jadi pegangan analis.</p>
+        <div class="proj-tags"><span>Detection Engineering</span><span>MITRE ATT&amp;CK</span></div>
+        <a class="proj-link" href="https://medium.com/@defamulyap14/alert-names-dont-travel-but-techniques-do-077e85a23987" target="_blank" rel="noopener">Baca di Medium &rarr;</a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-icon">&#9999;</div>
+        <h3>Your Detection Rules Are Code &mdash; So I Started Testing Them</h3>
+        <p>Membangun repo rule Sigma di mana tiap rule punya test serangan &amp; benign, dipetakan ke MITRE ATT&amp;CK, dan ditranslasikan ke Wazuh &mdash; semuanya dienforce di CI.</p>
+        <div class="proj-tags"><span>Sigma</span><span>Detection-as-Code</span><span>Wazuh</span></div>
+        <a class="proj-link" href="https://medium.com/@defamulyap14/your-detection-rules-are-code-so-i-started-testing-them-85aed16d6011" target="_blank" rel="noopener">Baca di Medium &rarr;</a>
+      </article>
+
+      <article class="proj-card">
+        <div class="proj-icon">&#9999;</div>
+        <h3>I Built My Own Malware Sandbox and Dared to Detonate Real Ransomware</h3>
+        <p>Membangun sandbox analisis malware (CAPEv2) dari nol dan mendetonasi ransomware nyata dengan isolasi penuh &mdash; arsitektur, jebakan yang dihadapi, dan pelajaran yang didapat.</p>
+        <div class="proj-tags"><span>Malware Analysis</span><span>Homelab</span><span>CAPEv2</span></div>
+        <a class="proj-link" href="https://medium.com/@defamulyap14/i-built-my-own-malware-sandbox-and-dared-to-detonate-real-ransomware-9d42c266c8e6" target="_blank" rel="noopener">Baca di Medium &rarr;</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- CERTIFICATIONS -->
 <section id="certs" style="background:var(--bg-soft)">
   <div class="wrap">
@@ -372,6 +447,7 @@
         <a class="btn btn-primary" href="mailto:defamulyap14@gmail.com">&#9993; Email Saya</a>
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/defa-mulya-pratama-4316b720a/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn btn-ghost" href="https://github.com/defamp" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-ghost" href="https://medium.com/@defamulyap14" target="_blank" rel="noopener">Medium</a>
       </div>
     </div>
   </div>
